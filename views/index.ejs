@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>BirdWatchr</title>
+  <script src='https://code.jquery.com/jquery-2.2.0.js'></script>
   <script src="/js/main.js"></script>
 </head>
 <body>
   <h1>Birds of NY</h1>
   <a href="/sightings/new">Spotted a bird?</a>
+  <h3>Recent Spottings</h3>
+  <%birds.forEach(function(bird){%>
+    <h4>Bird Type: <%=bird.bird%></h4>
+    <p>Location: <%=bird.Location%></p>
+    <p>Date of Sighting: <%=bird.date%></p>
+  <%})%>
+ 
 </body>
 </html>
 

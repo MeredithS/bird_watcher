@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+	<script src='https://code.jquery.com/jquery-2.2.0.js'></script>
+  <script src="/js/main.js"></script>
+</head>
+<body>
+	<a id="birds-link" href="#">All Bird Sightings</a>
+	<script id="bird-list" type="bird-list-temp">
+		<h2>Bird Type: {{bird}}</h2>
+		<p>Location of Sighting: {{Location}}, (Latitude: {{Lat_Long.lat}}, Longitude: {{Lat_Long.lng}})</p>
+		<p>Date Seen: {{date}}</p>
+		<input id="id" type="hidden" value="{{_id}}" name="id">
+		<button id="edit-bird">Edit Sighting</button>
+		<script id="edit-bird-form" type="edit-bird-template">
+			<form>
+				<label for="edit-bird-type">Type of Bird</label>
+				<input id="edit-bird-type" type="text" value="{{bird}}">
+				<label for="edit-location">Location Sighted:</label>
+				<input id="edit-location" type="text" value="{{Location}}">
+				<input id="_id" type="hidden" value="{{_id}}" name="_id">
+				<input id="update-bird" type="submit" value="Update Bird">
+			</form>
+		</script>
+	</script>
+	<a id="add-bird-link" href="#">Add a Sighting</a>
+	<script id="add-sighting" type="Add-bird-sighting-temp">
+		<form>
+			<label for="bird-type">Type of Bird</label>
+			<input id="bird-type" type="text" name="bird-type">
+			<label for="location">Location Sighted:</label>
+			<input id="location" type="text" name="location" placeholder="Please enter address of sighting">
+			<input id="add-sighting-btn" type="submit" value="Add Sighting">
+		</form>
+	</script>
+</body>
+</html>
